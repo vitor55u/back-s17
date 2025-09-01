@@ -1,29 +1,20 @@
-Escolha do Framework
+Escolha da Estrutura
 
-O framework adotado foi o Express.js (Node.js).
-Ele foi a opção mais adequada porque:
-
-É flexível e minimalista, perfeito para criar APIs REST de maneira rápida.
-
-Dispõe de um ecossistema bastante desenvolvido, com middlewares preparados para CORS, segurança (helmet), registros (morgan), autenticação e muito mais.
-
-É amplamente utilizado no mercado, o que simplifica a manutenção por parte de outros desenvolvedores.
-
-Para o problema estabelecido (API de pedidos com autenticação, monitoramento e controle de acesso), o Express possibilita uma implementação eficiente, transparente e de fácil expansão.
+A estrutura escolhida foi o Express.js (Node.js). Essa alternativa foi a mais apropriada devido aos seguintes motivos:
+Possui flexibilidade e simplicidade, ideal para desenvolver APIs REST rapidamente.
+Oferece um ecossistema bastante robusto, com middlewares prontos para CORS, segurança (helmet), logging (morgan), autenticação e muito mais.
+É bastante comum no ambiente profissional, facilitando a manutenção por outros programadores.
+Para a situação determinada (API de pedidos com autenticação, monitoramento e controle de acesso), o Express permite uma implementação eficaz, clara e facilmente ampliável.
 
 Integração com Serviço de Terceiros
 
-No código aprimorado, em vez de utilizar um SDK externo como o OpenRouteService, realizamos uma integração com o mecanismo de CORS e consumimos a API por meio do fetch (no cliente).
+No código otimizado, ao invés de utilizar um SDK externo como o OpenRouteService, realizamos uma conexão com o sistema de CORS e acessamos a API através do fetch (no cliente).
+O navegador/front-end que faz uso da API é o serviço externo implementado aqui. Para isso, configuramos o CORS (Cross-Origin Resource Sharing) com diretrizes específicas, permitindo apenas requisições de http://frontend.secureflow.com.
+Além disso, aplicamos autenticação baseada em token (Bearer meutokensecreto123) para garantir que apenas usuários permitidos possam acessar informações confidenciais (/pedidos).
 
-O navegador/front-end que utiliza a API é o serviço externo integrado aqui. Para isso, configuramos o CORS (Cross-Origin Resource Sharing) com regras específicas, autorizando apenas solicitações provenientes de http://frontend.secureflow.com.
-
-Ademais, empregamos autenticação baseada em token (Bearer meutokensecreto123) para assegurar que somente clientes autorizados possam acessar informações sensíveis (/pedidos).
 Dependências
 
-Pacotes instalados no projeto:
-
-express → estrutura para desenvolvimento de servidor e rotas HTTP.
-
-cors → configuração de regras de Cross-Origin Resource Sharing, que restringe o acesso à API apenas para origens autorizadas.
-
-Essas dependências foram incluídas por meio do npm e estão registradas no arquivo package.json.
+Pacotes que foram instalados no projeto:
+express → framework para a criação de servidores e rotas HTTP.
+cors → configuração das regras de Cross-Origin Resource Sharing, restringindo o acesso à API a origens autorizadas.
+Essas dependências foram adicionadas através do npm e estão documentadas no arquivo package.json.
